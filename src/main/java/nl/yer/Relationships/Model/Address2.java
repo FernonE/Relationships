@@ -1,17 +1,27 @@
 package nl.yer.Relationships.Model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-public class Address {
-    //http://springboot.carpago.nl/documentation.adoc/009-jpa-one-to-many.html
-
+public class Address2 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String street;
     private int number;
+
+
+    public Address2(){}
+
+    public Address2(String street,int number){
+        super();
+        this.street = street;
+        this.number = number;
+    }
 
     public long getId() {
         return id;
@@ -32,5 +42,4 @@ public class Address {
     public void setNumber(int number) {
         this.number = number;
     }
-
 }

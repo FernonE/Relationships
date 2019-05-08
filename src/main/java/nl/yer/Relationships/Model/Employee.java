@@ -9,12 +9,25 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    private String name;
 
-    // fails with the exception that JPA does not know what type of column to create for Address? Clear??
+
     @OneToOne
     private Address address;
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
